@@ -70,7 +70,7 @@ public class ProjetoNotas
                 {
                     System.out.println("Aprovado!");
                 }
-      }
+      }  //Um comentário
     
         catch(Exception e)
         {
