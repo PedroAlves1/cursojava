@@ -21,7 +21,7 @@ public class Calculadora {
         System.out.println("Digite o primeiro valor");
         a = scanner.nextFloat(); //a Receberá o primeiro valor
         
-        System.out.println("Digite a operação (Use + para soma, - para subtração, * para multiplicação e / para divisão");
+        System.out.println("Digite a operação (Use + para soma, - para subtração, * para multiplicação, / para divisão e ^ para subtração");
         op=scanner.next();
  
         System.out.println("Digite segundo valor");
@@ -38,24 +38,26 @@ public class Calculadora {
             }
         if (op.equals("-")) //em caso de subtraçao/
             {
-                        valor = (a-b); 
+                        valor=menos(a, b); 
                 System.out.println("O resultado da subtração é: " +valor); //mostra resultado em caso de subtração
             }
         if (op.equals("*"))
             {
-            valor = (a*b);
+            valor=vezes(a, b);
                 System.out.println("O resultado da multiplicação é: "+valor); //mostra resultado em caso de multiplicação
             }
         if (op.equals("/"))
             {
-             divide(a,b);    
-            
-            
-                /* valor = (a/b);
+              valor=divide (a, b);
                 System.out.println("O resultado da divisão é: " +valor);  //mostra resultado em caso de divisão
-                 */
-             }
-        
+                
+                             }
+        if (op.equals("^"))
+        {
+            valor=potencia(a, b);
+             System.out.println("O resultado da potenciação é: " +valor); //mostra resultado em caso de potencia
+        }
+       
         } //fecha public main
     
         public static float soma(float a, float b) 
@@ -65,21 +67,49 @@ public class Calculadora {
         return ress;
             
         }//fecha public soma
-    
-        public static void divide(float a, float b) 
+ 
+        public static float menos(float a, float b) 
+        { //abre menos
+        float resu;
+        resu = a-b;
+        return resu;
+            
+        } //fecha menos
+        
+        public static float vezes(float a, float b)
+        {//abre vezes
+        float resv;
+        resv = a*b;
+        return resv;
+        
+        }//fecha vezes        
+        public static float divide(float a, float b) 
         {//abre divide
         float resd;
         
         if(b==0)
         {
             System.out.println("Erro! Você não pode dividir um número por 0.");
-        return;
+        return 0;
         }
         resd = a/b;
-            System.out.println("O resultado da divisão é: " +resd);
-            
-        }//fecha divide 
+        return resd;
         
+        }//fecha divide 
+       
+        public static float potencia(float a, float b)
+        { //abre potencia
+        float resp;
+        float total;
+        
+        total=1;
+        for (int i=1; i<=b; i++)
+        {
+          total=total*a;
+        }
+        resp=total;
+        return resp;
+        }//fecha potencia
     } //fecha class
 
 
