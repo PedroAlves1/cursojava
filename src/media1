@@ -1,0 +1,45 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package projeto;
+
+import java.io.InputStream;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Pedro
+ */
+public class Notas {
+    public static void main(String[] args) {
+        InputStream entrada=System.in;
+        Scanner scanner = new Scanner (entrada);
+        
+        float nota1, nota2, media;
+        
+        System.out.println("Digite a primeira nota");
+        nota1=scanner.nextFloat();
+        
+        System.out.println("Digite a segunda nota");
+        nota2=scanner.nextFloat();
+        
+        media=nota(nota1, nota2);
+        System.out.println("A nota é: " +media);
+            if(media<5){
+                System.out.println("Reprovado!");
+            }
+            else{
+                System.out.println("Aprovado!");
+            }
+              
+                
+    }
+    
+    public static float nota(float n1, float n2) {
+        float nfinal;
+        
+        nfinal = (n1+n2)/2;
+        return nfinal;
+    }
+}
